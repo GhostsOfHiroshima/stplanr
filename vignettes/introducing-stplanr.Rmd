@@ -21,6 +21,16 @@ Tools for transport planning should be flexible, robust, and able to handle a wi
 
 ## Introduction
 
+As settlements worldwide have grown and become more complex, the process of planning has had to adapt. Planners today are specialists, in sub-fields such as Emergency, Logistics, Healthcare, Urban and Transport Planning. And the 'art' of planning has become more of a science, with its own array of specialist hardware and software.
+
+The process of Transport Planning has undergone a particularly dramatic revolution. Transport interventions such as new bridges, ports and active travel routes are no longer decided based on the intuition of public sector or political authorities. Decisions are now the result of a long socio-technical process involving public consultation, cost-benefit analyses and computer modelling and visualisation. With the ongoing digital revolution, the importance of this last stage has grown, to the point where transport planning is now a highly technical process, employing dozens of software developers in large planning organisations. There is now a multi-billion pound global transport planning consultancy industry, to support the decision-making process. Yet the fruits of all this labour are unavailable to the vast majority of citizens worldwide, and transport planning decisions which go against the best available evidence keep getting made.
+
+This is the evolving context which motivated the development of **stplanr**. Its aim is simple: to provide an accessible toolbox of for transport planning. It is hoped that it will be useful for practitioners and researcher alike as part of the transition to open source software taking place in the tech industry, which is gradually filtering down into other sectors of the economy, notably 'Big Data' in
+consultancy.^[Comments
+in support of this statement were made by a MKinsey manager during the European R Users Meeting (eRum), Poznan, 2016.
+]
+The best available evidence suggests that the future of civilisation depends on our ability to transition away from fossile fuels, and transport is a major roadblock preventing decarbonisation, as the fastest growing sector by energy use. It is this knowledge that motivated the word 'sustainable' in the package's name: by focussing on active travel, we hope it is used as part of this global transition away from fossil fuels. 
+
 Common computational tasks in transportation research and planning include:
 
 - Access to and processing of data on transport infrastructure and behaviour
@@ -32,10 +42,7 @@ Common computational tasks in transportation research and planning include:
 the automation of such tasks (and there are many others) can assist researchers and practitioners create evidence for design and decision making, as part of the analyse, plan, design workflow.
 
 **stplanr** facilitates each of these tasks with an integrated 
-series of tools and example datasets. The 'sustainable' in the
-package name ("sustainable transport planning with R")
-refers to both the focus on active travel
-and the aim for longevity and accessibility in the software.
+series of tools and example datasets. 
 Transport planning is notoriously reliant on 'black boxes' and
 the same applies to scientific research into transport systems
 [@Waddell2002].
