@@ -17,7 +17,7 @@ library(leaflet) # needed for plotting data
 
 ## Abstract
 
-**stplanr** was developed to solve a real world problem: how to convert official data on travel patterns into geographic objects that could be plotted on a map and analysed using GIS? Over time the package has evolved to include a number of other functions. Analysis of road traffic casualty data, various routing algorithms, 'travel watershed' analyis and access to Google's Travel Matrix are all possible. This paper traces the development of these capabilities with a focus on applied case studies and reproducible examples.
+Tools for transport planning should be flexible, robust, and able to handle a wide variety of geographical and transport survey datasets out-of-the-box. In democracies, they should also be transparent and accessible. **stplanr** meets each of these criteria by providing functionality commonly needed for transport planning in R. This includes the creation of geographic 'desire lines' from origin-destination data; tools to automate the import of road traffic casualty datasets; interface to routing services (including CycleStreets.net, Graphhopper and OSRM); 'travel watershed' analyis and; access to Google's Travel Matrix API. This paper demonstrates **stplanr** can be used to design sustainable transport systems, using a case study of how to allocate funding to maximise cycling uptake in the city of Leeds, UK. We conclude that open source tools such as **stplanr**, used in conjunction with open datasets and public debate, can enable transport plans to be based on the best available evidence, as part of a global transition away from fossil fuels.
 
 ## Introduction
 
