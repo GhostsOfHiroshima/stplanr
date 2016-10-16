@@ -29,14 +29,16 @@ This is the evolving context which motivated the development of **stplanr**. Its
 consultancy.^[Comments
 in support of this statement were made by a MKinsey manager during the European R Users Meeting (eRum), Poznan, 2016.
 ]
-The best available evidence suggests that the future of civilisation depends on our ability to transition away from fossile fuels, and transport is a major roadblock preventing decarbonisation, as the fastest growing sector by energy use. It is this knowledge that motivated the word 'sustainable' in the package's name: by focussing on active travel, we hope it is used as part of this global transition away from fossil fuels. 
+The best available evidence suggests that the future of civilisation depends on our ability to transition away from fossile fuels. The transport sector is the fastest growing source of emissions by sector and represents a major roadblock in the path towards a zero-carbon economy. Transport systems are a major cause of ill health, by enabling sedentary lifestyles and causing numerous road traffic casualties. Knowledge of these impacts motivated the word 'sustainable' in the package's name: by focussing on active travel and public transport modes, **stplanr** encourages the design of transport interventions that reduce dependence on fossil fuels. 
 
-Common computational tasks in transportation research and planning include:
+To plan for any transport intervention, sustainable or otherwise, common computational tasks that need to be undertaken include:
 
-- Access to and processing of data on transport infrastructure and behaviour
-- Analysis and visualisation of origin-destination flow data
-- Allocation of flows to the transport (road) network
-- Development of models to estimate transport behaviour
+- Accessing and processing of data on transport infrastructure and behaviour
+- Analysis and visualisation of the transport network
+- Analysis of origin-destination (OD) data and the visualisation of resulting 'desire lines'
+- The allocation of desire lines to roads and other guideways via routing algorithms to show commonly used routes through geographical space
+- The aggregation of routes to estimate total levels of flow on segments throughout the transport network
+- Development of models to estimate transport behaviour currently and under various scenarios of change
 - The calculation of 'catchment areas' affected by transport infrastructure
 
 the automation of such tasks (and there are many others) can assist researchers and practitioners create evidence for design and decision making, as part of the analyse, plan, design workflow.
