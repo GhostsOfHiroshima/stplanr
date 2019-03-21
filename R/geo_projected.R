@@ -13,7 +13,7 @@
 #' @examples
 #' sp::bbox(routes_fast)
 #' new_crs <- crs_select_aeq(routes_fast)
-#' rf_projected <- sp::spTransform(routes_fast, new_crs)
+#' rf_projected <- sfTransform(routes_fast, new_crs)
 #' sp::bbox(rf_projected)
 #' line_length <- rgeos::gLength(rf_projected, byid = TRUE)
 #' plot(line_length, rf_projected$length)
@@ -91,7 +91,7 @@ geo_projected.Spatial <- function(shp, fun, crs = geo_select_aeq(shp), silent = 
       }
       res <- fun(shp_projected, ...)
       if (is(res, "Spatial")) {
-        res <- sp::spTransform(res, sp::CRS("+init=epsg:4326"))
+        res <- sfTransform(res, sp::CRS("+init=epsg:4326"))
       }
     }
   } else {
@@ -101,7 +101,7 @@ geo_projected.Spatial <- function(shp, fun, crs = geo_select_aeq(shp), silent = 
     }
     res <- fun(shp_projected, ...)
     if (is(res, "Spatial")) {
-      res <- sp::spTransform(res, sp::CRS("+init=epsg:4326"))
+      res <- sfTransform(res, sp::CRS("+init=epsg:4326"))
     }
   }
   res

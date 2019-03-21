@@ -346,3 +346,27 @@ geo_bb_matrix.matrix <- function(shp) {
   range_y <- range(shp[, 2])
   matrix(c(range_x, range_y), ncol = 2, byrow = TRUE)
 }
+
+#' Transform CRS of sp objects, using sf as a backend
+#' @param x object to be transformed
+#' @param CRSobj object of class CRS, or of class character in which
+#' case it is converted to CRS
+#' @family geo
+#' @export
+#' @examples
+#' sp::proj4string(cents)
+#' x <- cents[1, ]
+#' CRSobj <- sp::CRS("+init=epsg:27700")
+#' cents_osgb <- sfTransform(x, CRSobj = CRSobj)
+sfTransform <- function(x, CRSobj) {
+  crs_class <- class(CRSobj)
+  if(crs_class == "CRS") {
+    CRSobj <- attr(CRSobj, "projargs")
+    # substring(text = CRSobj, first = regexpr("g:", CRSobj) + 2,
+    #           last = regexpr("proj", CRSobj) - 3
+    #             )
+  }
+  x_sf <- sf::st_as_sf(x)
+  x_sf_projected <- sf::st_transform(x_sf, CRSobj)
+  as(x_sf_projected, "Spatial")
+}

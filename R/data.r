@@ -118,7 +118,7 @@ NULL
 #' to_remove <- list.files(pattern = "COWZ", full.names = TRUE, recursive = TRUE)
 #' file.remove(to_remove)
 #' proj4string(wz)
-#' wz <- sp::spTransform(wz, proj4string(zones))
+#' wz <- sfTransform(wz, proj4string(zones))
 #' destination_zones <- wz[zones, ]
 #' plot(destination_zones)
 #' devtools::use_data(destination_zones)

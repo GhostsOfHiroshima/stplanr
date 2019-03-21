@@ -63,7 +63,7 @@ line_sample <- function(l, n, weights) {
       crs_orig <- sp::CRS("+init=epsg:4326")
     }
     crs_new <- crs_select_aeq(l)
-    l <- sp::spTransform(l, CRSobj = crs_new)
+    l <- sfTransform(l, CRSobj = crs_new)
   }
   lsf <- sf::st_as_sf(l, "SpatialLinesDataFrame")
   l_lengths <- sf::st_length(lsf)
@@ -77,7 +77,7 @@ line_sample <- function(l, n, weights) {
   psp <- as(psf, "Spatial")
   psp <- sp::SpatialPoints(matrix(sp::coordinates(psp), ncol = 2), proj4string = sp::CRS(proj4string(psp)))
   if (not_projected) {
-    psp <- sp::spTransform(psp, crs_orig)
+    psp <- sfTransform(psp, crs_orig)
   }
   return(psp)
 }

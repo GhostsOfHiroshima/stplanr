@@ -32,6 +32,6 @@ Other geo: \code{\link{buff_geo}},
   \code{\link{gclip}}, \code{\link{geo_bb_matrix}},
   \code{\link{geo_bb}}, \code{\link{mapshape_available}},
   \code{\link{mapshape}}, \code{\link{quadrant}},
-  \code{\link{reproject}}
+  \code{\link{reproject}}, \code{\link{sfTransform}}
 }
 \concept{geo}

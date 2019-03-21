@@ -86,11 +86,11 @@ geo_toptail.sf <- function(l, toptail_dist, ...) {
 #' plot(buff)
 #' plot(r, add = TRUE)
 #' # Test it works the same on projected data
-#' shp <- sp::spTransform(r, sp::CRS("+init=epsg:27700"))
+#' shp <- sfTransform(r, sp::CRS("+init=epsg:27700"))
 #' buff2 <- buff_geo(shp, 50) # test if it works the same on projected data
 #' plot(buff2)
 #' plot(r, add = TRUE) # note they do not show
-#' buff3 <- sp::spTransform(buff2, sp::CRS("+init=epsg:4326"))
+#' buff3 <- sfTransform(buff2, sp::CRS("+init=epsg:4326"))
 #' plot(buff)
 #' plot(buff3, add = TRUE, col = "black")
 buff_geo <- function(shp, width, ...) {

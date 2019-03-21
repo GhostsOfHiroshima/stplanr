@@ -116,15 +116,15 @@ od_aggregate.Spatial <- function(flow, zones, aggzones,
   origaggzones <- aggzones
 
   if (sp::is.projected(zones) == TRUE & all.equal(zones@proj4string, aggzones@proj4string) == FALSE) {
-    aggzones <- sp::spTransform(aggzones, zones@proj4string)
+    aggzones <- sfTransform(aggzones, zones@proj4string)
   } else {
     projection <- paste0(
       "+proj=aea +lat_1=90 +lat_2=-18.416667 ",
       "+lat_0=0 +lon_0=10 +x_0=0 +y_0=0 +ellps=GRS80",
       " +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     )
-    zones <- sp::spTransform(zones, projection)
-    aggzones <- sp::spTransform(aggzones, projection)
+    zones <- sfTransform(zones, projection)
+    aggzones <- sfTransform(aggzones, projection)
   }
 
   zones@data$stplanr_area <- rgeos::gArea(zones, byid = TRUE)
@@ -233,15 +233,15 @@ sp_aggregate <- function(zones, aggzones, cols = FALSE,
   origaggzones <- aggzones
 
   if (sp::is.projected(zones) == TRUE & all.equal(zones@proj4string, aggzones@proj4string) == FALSE) {
-    aggzones <- sp::spTransform(aggzones, zones@proj4string)
+    aggzones <- sfTransform(aggzones, zones@proj4string)
   } else {
     projection <- paste0(
       "+proj=aea +lat_1=90 +lat_2=-18.416667 ",
       "+lat_0=0 +lon_0=10 +x_0=0 +y_0=0 +ellps=GRS80",
       " +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
     )
-    zones <- sp::spTransform(zones, projection)
-    aggzones <- sp::spTransform(aggzones, projection)
+    zones <- sfTransform(zones, projection)
+    aggzones <- sfTransform(aggzones, projection)
   }
 
   zones@data$stplanr_area <- rgeos::gArea(zones, byid = TRUE)

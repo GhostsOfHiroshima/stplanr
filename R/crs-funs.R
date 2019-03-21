@@ -15,7 +15,7 @@
 #' data("routes_fast")
 #' new_crs <- crs_select_aeq(routes_fast)
 #' plot(routes_fast)
-#' rf_projected <- sp::spTransform(routes_fast, new_crs)
+#' rf_projected <- sfTransform(routes_fast, new_crs)
 #' plot(rf_projected)
 #' sp::bbox(rf_projected)
 #' line_length <- rgeos::gLength(rf_projected, byid = TRUE)
@@ -51,6 +51,6 @@ reproject <- function(shp, crs = crs_select_aeq(shp)) {
     crs <- sp::CRS(paste0("+init=epsg:", crs))
   }
   message(paste0("Transforming to CRS ", crs))
-  res <- sp::spTransform(shp, crs)
+  res <- sfTransform(shp, crs)
   res
 }

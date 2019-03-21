@@ -23,7 +23,7 @@ The function is based on this stackexchange answer:
 data("routes_fast")
 new_crs <- crs_select_aeq(routes_fast)
 plot(routes_fast)
-rf_projected <- sp::spTransform(routes_fast, new_crs)
+rf_projected <- sfTransform(routes_fast, new_crs)
 plot(rf_projected)
 sp::bbox(rf_projected)
 line_length <- rgeos::gLength(rf_projected, byid = TRUE)
@@ -36,6 +36,6 @@ Other geo: \code{\link{bbox_scale}},
   \code{\link{gclip}}, \code{\link{geo_bb_matrix}},
   \code{\link{geo_bb}}, \code{\link{mapshape_available}},
   \code{\link{mapshape}}, \code{\link{quadrant}},
-  \code{\link{reproject}}
+  \code{\link{reproject}}, \code{\link{sfTransform}}
 }
 \concept{geo}

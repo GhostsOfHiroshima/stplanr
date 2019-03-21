@@ -212,7 +212,7 @@ calc_catchment.Spatial <- function(
 
   if (projection != "skipproj") {
     targetintersect <-
-      sp::spTransform(targetintersect, sp::CRS(origprojpolygon))
+      sfTransform(targetintersect, sp::CRS(origprojpolygon))
   }
   return(targetintersect)
 }
@@ -517,7 +517,7 @@ calc_moving_catchment <- function(
   }
 
   targetlayer <-
-    sp::spTransform(targetlayer, sp::CRS(origprojpolygon))
+    sfTransform(targetlayer, sp::CRS(origprojpolygon))
 
   return(targetlayer)
 }
@@ -612,7 +612,7 @@ calc_network_catchment <- function(sln,
     is(targetlayer, "SpatialPoints") |
     is(targetlayer, "SpatialPointsDataFrame")) {
     if (sln@sl@proj4string@projargs != targetlayer@proj4string@projargs) {
-      newtargetlayer <- sp::spTransform(targetlayer, sln@sl@proj4string)
+      newtargetlayer <- sfTransform(targetlayer, sln@sl@proj4string)
     }
     else {
       newtargetlayer <- targetlayer
@@ -705,16 +705,16 @@ checkprojs.Spatial <- function(polygonlayer, targetlayer, projection) {
   origprojpolygon <- sp::proj4string(polygonlayer)
 
   if (polyproj == FALSE & lineproj == FALSE) {
-    polygonlayer <- sp::spTransform(polygonlayer, sp::CRS(projection))
-    targetlayer <- sp::spTransform(targetlayer, sp::CRS(projection))
+    polygonlayer <- sfTransform(polygonlayer, sp::CRS(projection))
+    targetlayer <- sfTransform(targetlayer, sp::CRS(projection))
   } else if (polyproj == TRUE & lineproj == FALSE) {
     projection <- sp::proj4string(polygonlayer)
-    targetlayer <- sp::spTransform(targetlayer, sp::CRS(projection))
+    targetlayer <- sfTransform(targetlayer, sp::CRS(projection))
   } else if (polyproj == TRUE & lineproj == TRUE) {
     if (sp::proj4string(polygonlayer) != sp::proj4string(targetlayer)) {
       projection <- sp::proj4string(polygonlayer)
       targetlayer <-
-        sp::spTransform(targetlayer, sp::CRS(projection))
+        sfTransform(targetlayer, sp::CRS(projection))
     }
   }
   return(list("polygonlayer" = polygonlayer, "targetlayer" = targetlayer, "origprojpolygon" = origprojpolygon))
